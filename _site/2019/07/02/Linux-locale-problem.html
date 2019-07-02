@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>tanyf.github.ioLinux Locale Problem</title><!-- Begin Jekyll SEO tag v2.5.0 -->
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Linux Locale Problem" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Linux上locale的问题 有时候在linux使用terminal时会碰上locale的问题，类似于 $ locale locale: Cannot set LC_CTYPE to default locale: No such file or directory locale: Cannot set LC_ALL to default locale: No such file or directory 尝试设置时又会有 locale: Cannot set LC_CTYPE to default locale: No such file or directory" />
+<meta property="og:description" content="Linux上locale的问题 有时候在linux使用terminal时会碰上locale的问题，类似于 $ locale locale: Cannot set LC_CTYPE to default locale: No such file or directory locale: Cannot set LC_ALL to default locale: No such file or directory 尝试设置时又会有 locale: Cannot set LC_CTYPE to default locale: No such file or directory" />
+<link rel="canonical" href="http://localhost:4000/2019/07/02/Linux-locale-problem.html" />
+<meta property="og:url" content="http://localhost:4000/2019/07/02/Linux-locale-problem.html" />
+<meta property="og:site_name" content="tanyf.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-02T00:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"Linux上locale的问题 有时候在linux使用terminal时会碰上locale的问题，类似于 $ locale locale: Cannot set LC_CTYPE to default locale: No such file or directory locale: Cannot set LC_ALL to default locale: No such file or directory 尝试设置时又会有 locale: Cannot set LC_CTYPE to default locale: No such file or directory","headline":"Linux Locale Problem","datePublished":"2019-07-02T00:00:00+08:00","dateModified":"2019-07-02T00:00:00+08:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/07/02/Linux-locale-problem.html"},"url":"http://localhost:4000/2019/07/02/Linux-locale-problem.html","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" type="text/css" href="/assets/main-dark.css"></head>
+<body>
+    <div class="container"><header>
+  <div class="menu">
+    <ul></ul>
+  </div>
+</header>
+<main>
+      <h1 id="linux上locale的问题">Linux上locale的问题</h1>
+<p>有时候在linux使用terminal时会碰上locale的问题，类似于</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>locale
+locale: Cannot <span class="nb">set </span>LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set </span>LC_ALL to default locale: No such file or directory
+</code></pre></div></div>
+<p>尝试设置时又会有</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locale: Cannot <span class="nb">set </span>LC_CTYPE to default locale: No such file or directory
+</code></pre></div></div>
+
+<p>Google一下，找到一个合适的解决方案:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dpkg-reconfigure locales
+<span class="nb">sudo </span>locale-gen
+</code></pre></div></div>
+
+<p>另外</p>
+<blockquote>
+  <p>C = POSIX standards-compliant default locale. Only strict ASCII characters are valid.<br />
+C.utf8 = POSIX standards-compliant locale, extended to allow the basic use of UTF-8. No character upper-lower case relationships and collation orders defined beyond ASCII.<br />
+en_US.utf8 = American English UTF-8 locale. 
+It “knows” which non-ASCII Unicode characters are upper/lower case pairs, and sorts them together, upper case immediately before lower case. It also has default sorting orders defined for various non-Latin alphabets.</p>
+</blockquote>
+
+<p>+linux+ +locale+</p>
+
+
+    </main><footer>
+  
+</footer>
+</div>
+  </body>
+</html>
