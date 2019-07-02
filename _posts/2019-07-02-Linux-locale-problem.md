@@ -1,3 +1,11 @@
+---
+layout: post
+title: Linux locale problem
+description: fix the locale problem on Linux
+tags: linux locale
+---
+
+
 # Linux上locale的问题
 有时候在linux使用terminal时会碰上locale的问题，类似于
 ```shell

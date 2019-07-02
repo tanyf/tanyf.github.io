@@ -1,0 +1,24 @@
+<h1 id="linux上locale的问题">Linux上locale的问题</h1>
+<p>有时候在linux使用terminal时会碰上locale的问题，类似于</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>locale
+locale: Cannot <span class="nb">set </span>LC_CTYPE to default locale: No such file or directory
+locale: Cannot <span class="nb">set </span>LC_ALL to default locale: No such file or directory
+</code></pre></div></div>
+<p>尝试设置时又会有</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>locale: Cannot <span class="nb">set </span>LC_CTYPE to default locale: No such file or directory
+</code></pre></div></div>
+
+<p>Google一下，找到一个合适的解决方案:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dpkg-reconfigure locales
+<span class="nb">sudo </span>locale-gen
+</code></pre></div></div>
+
+<p>另外</p>
+<blockquote>
+  <p>C = POSIX standards-compliant default locale. Only strict ASCII characters are valid.<br />
+C.utf8 = POSIX standards-compliant locale, extended to allow the basic use of UTF-8. No character upper-lower case relationships and collation orders defined beyond ASCII.<br />
+en_US.utf8 = American English UTF-8 locale. 
+It “knows” which non-ASCII Unicode characters are upper/lower case pairs, and sorts them together, upper case immediately before lower case. It also has default sorting orders defined for various non-Latin alphabets.</p>
+</blockquote>
+
+<p>+linux+ +locale+</p>
