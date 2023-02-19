@@ -1,4 +1,4 @@
-theme: jekyll-theme-console
-#remote_theme: tanyf/jekyll-theme-console-demo-hacker/
+#theme: jekyll-theme-console
+remote_theme: tanyf/jekyll-theme-console
 
 style: hacker
