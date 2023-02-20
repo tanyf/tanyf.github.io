@@ -1,3 +1,11 @@
+---
+layout: post
+title: 在Mac上运行和控制naiveproxy客户端
+description: Launchd的基础知识和使用它控制naiveproxy客户端
+tags: naiveproxy launchd plist deamon agent
+---
+
+
 # 在Mac上运行和控制naiveproxy客户端
 ## Launchd
 类似于Linux上的Systemd, 用于控制启动和检测运行各种服务，使用`lauchctl`命令来控制。
